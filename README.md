@@ -87,7 +87,7 @@ Se necesita una cuenta activa de ComproPago.
 Para poder hacer uso de la librería es necesario incluir las clases del archivo **.jar**
 
 ```java
-import compropagosdk.Client;
+import compropagosdk.com.compropago.sdk.Client;
 import compropagosdk.factory.Factory;
 import compropagosdk.factory.models.*;
 ```
@@ -95,7 +95,7 @@ import compropagosdk.factory.models.*;
 ### Configuración del Cliente
 
 Para poder hacer uso del paquete y llamados al API es necesario que primero configures tus Llaves de conexión y 
-crees un instancia de Client. *Sus llaves las encontraras en el Panel de ComproPago en el menú Configuración.*
+crees un instancia de com.compropago.sdk.Client. *Sus llaves las encontraras en el Panel de ComproPago en el menú Configuración.*
 
 [Consulta Aquí tus Llaves](https://compropago.com/panel/configuracion)
 
@@ -105,7 +105,7 @@ crees un instancia de Client. *Sus llaves las encontraras en el Panel de ComproP
  * @param String privatekey    Llave privada correspondiente al modo de la tienda
  * @param boolean live         Modo de la tienda (false = Test | true = Live)
  */
-Client client = new Client(
+com.compropago.sdk.Client client = new com.compropago.sdk.Client(
     "pk_test_5989d8209974e2d62",  // publickey
     "sk_test_6ff4e982253c44c42",  // privatekey
     false,                        // live
@@ -166,7 +166,7 @@ public NewOrderInfo placeOrder(PlaceOrderInfo info);
 ##### Verificar el Estatus de una orden
 
 Para verificar el estatus de una orden generada es necesario llamar al método **verifyOrder** que provee el atributo 
-**api** del objeto **Client** y el cual regresa una instancia **CpOrderInfo**. Este método recibe como parámetro el ID 
+**api** del objeto **com.compropago.sdk.Client** y el cual regresa una instancia **CpOrderInfo**. Este método recibe como parámetro el ID 
 generado por ComproPago para cada órden. También puede obtener este ID desde un objeto **NewOrderInfo** accediendo al 
 atributo **id**.
 
@@ -196,7 +196,7 @@ public CpOrderInfo verifyOrder(String orderId);
 ##### Obtener el listado de las tiendas donde se puede realizar el Pago
 
 Para obtener el listado de Proveedores disponibles para realizar el pago de las órdenes es necesario consultar el método
-**listProviders** que se encuentra alojado en el atributo **api** del objeto **Client** y el cual regresa una instancia 
+**listProviders** que se encuentra alojado en el atributo **api** del objeto **com.compropago.sdk.Client** y el cual regresa una instancia 
 de tipo **ArrayList** la cual contendrá objetos de tipo **Provider**.
 
 ```java
@@ -228,7 +228,7 @@ public Provider[] listProviders();
 ##### Envio de instrucciones SMS
 
 Para realizar el el envío de las instrucciones de compra vía SMS es necesario llamar al método **sendSmsInstructions** 
-que se encuentra alojado en el atributo **api** del objeto **Client** y el cual regresa una instancia de tipo 
+que se encuentra alojado en el atributo **api** del objeto **com.compropago.sdk.Client** y el cual regresa una instancia de tipo 
 **SmsInfo**.
 
 ```java
@@ -277,7 +277,7 @@ CpOrderInfo info = Factory.cpOrderInfo( cadenaObtenida );
 ##### Crear un nuevo Webhook
 
 Para crear un nuevo Webhook en la cuenta, se debe de llamar al método **createWebhook** que se encuentra alojado en el 
-atributo **api** del objeto **Client** y el cual regresa una instancia de tipo **Webhook**.
+atributo **api** del objeto **com.compropago.sdk.Client** y el cual regresa una instancia de tipo **Webhook**.
 
 ```java
 // Se pasa como paramtro la URL al webhook
@@ -298,7 +298,7 @@ public Webhook createWebhook(String url);
 ##### Actualizar un Webhook
 
 Para actualizar la url de un webhook, se debe de llamar al método **updateWebhook** que se encuentra alojado en el 
-atributo **api** del objeto **Client** y el cual regresa una instancia de tipo **Webhook**.
+atributo **api** del objeto **com.compropago.sdk.Client** y el cual regresa una instancia de tipo **Webhook**.
 
 ```java
 Webhook updated_webhook = client.api.updateWebhook(webhook.id, "http://sitio.com/nuevo_webhook");
@@ -319,7 +319,7 @@ public Webhook updateWebhook(String webhookId, String url);
 ##### Desactivar un Webhook
 
 Para desactivar un webhook y evitar que reciba notificaciones sin eliminarlo debe de ocupar la función **deactive_webhook** 
-que se encuentra alojado en el atributo **api** del objeto **Client** y el cual regresa una instancia de tipo **Webhook**
+que se encuentra alojado en el atributo **api** del objeto **com.compropago.sdk.Client** y el cual regresa una instancia de tipo **Webhook**
 
 ```java
 Webhook deactive = client.api.deactiveWebhook(webhook.id);
@@ -339,7 +339,7 @@ public Webhook deactiveWebhook(String webhookId);
 ##### Eliminar un Webhook
 
 Para eliminar un webhook, se debe de llamar al método **deleteWebhook** que se encuentra alojado en el atributo **api** 
-del objeto **Client** y el cual regresa una instancia de tipo **Webhook**.
+del objeto **com.compropago.sdk.Client** y el cual regresa una instancia de tipo **Webhook**.
 
 ```java
 Webhook deleted_webhook = client.api.deleteWebhook(webhook.id);
@@ -359,7 +359,7 @@ public Webhook deleteWebhook(String webhookId);
 ##### Obtener listado de Webhooks registrados
 
 Para obtener la lista de webhooks registrados den una cuenta, se debe de llamar al método **listWebhook** que se 
-encuentra alojado en el atributo **api** del objeto **Client** y el cual regresa una instancia de tipo **Array** la 
+encuentra alojado en el atributo **api** del objeto **com.compropago.sdk.Client** y el cual regresa una instancia de tipo **Array** la 
 cual contiene objetos de tipo **Webhook**
 
 ```java
