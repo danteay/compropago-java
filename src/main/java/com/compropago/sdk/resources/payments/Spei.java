@@ -1,4 +1,6 @@
 package com.compropago.sdk.resources.payments;
 
-public class Spei {
+import com.compropago.sdk.resources.AbstractResource;
+
+public class Spei extends AbstractResource {
 }

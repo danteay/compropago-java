@@ -1,4 +1,4 @@
 package com.compropago.sdk.resources;
 
-public class Webhook {
+public class Webhook extends AbstractResource {
 }
