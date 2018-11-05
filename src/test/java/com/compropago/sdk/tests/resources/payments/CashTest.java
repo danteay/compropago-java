@@ -1,4 +1,6 @@
 package com.compropago.sdk.tests.resources.payments;
 
-public class CashTest {
+import com.compropago.sdk.tests.config.TestConfig;
+
+public class CashTest extends TestConfig {
 }

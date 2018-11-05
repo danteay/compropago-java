@@ -7,7 +7,7 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import com.compropago.sdk.exceptions.RequestValidationException;
 import com.compropago.sdk.helpers.ValidationHelper;
 import com.compropago.sdk.resources.AbstractResource;
-import com.compropago.sdk.resources.models.CashOrder;
+import com.compropago.sdk.resources.models.OrderInfo;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -108,14 +108,14 @@ public class Cash extends AbstractResource {
     /**
      * Generate a rest request to the ComproPago API to register a new Cash order
      *
-     * @param order CashOrder object with the necesary information of the order
+     * @param order OrderInfo object with the necesary information of the order
      *
      * @return Json object with the resultant information of the order creation
      *
      * @throws UnirestException Request Exception
      * @throws RequestValidationException Data validation exception
      */
-    public JSONObject createOrder(CashOrder order) throws UnirestException, RequestValidationException {
+    public JSONObject createOrder(OrderInfo order) throws UnirestException, RequestValidationException {
         String url = this.apiUrl + "/charges";
 
         JSONObject data = new JSONObject();
