@@ -1,6 +1,6 @@
 package com.compropago.sdk.resources.models;
 
-public class CashOrder {
+public class OrderInfo {
 
     private String orderId;
     private String orderName;
@@ -16,7 +16,7 @@ public class CashOrder {
         return orderId;
     }
 
-    public CashOrder setOrderId(String orderId) {
+    public OrderInfo setOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
@@ -25,7 +25,7 @@ public class CashOrder {
         return orderName;
     }
 
-    public CashOrder setOrderName(String orderName) {
+    public OrderInfo setOrderName(String orderName) {
         this.orderName = orderName;
         return this;
     }
@@ -34,7 +34,7 @@ public class CashOrder {
         return orderPrice;
     }
 
-    public CashOrder setOrderPrice(float orderPrice) {
+    public OrderInfo setOrderPrice(float orderPrice) {
         this.orderPrice = orderPrice;
         return this;
     }
@@ -43,7 +43,7 @@ public class CashOrder {
         return currency;
     }
 
-    public CashOrder setCurrency(String currency) {
+    public OrderInfo setCurrency(String currency) {
         this.currency = currency;
         return this;
     }
@@ -52,7 +52,7 @@ public class CashOrder {
         return clientName;
     }
 
-    public CashOrder setClientName(String clientName) {
+    public OrderInfo setClientName(String clientName) {
         this.clientName = clientName;
         return this;
     }
@@ -61,7 +61,7 @@ public class CashOrder {
         return clientEmail;
     }
 
-    public CashOrder setClientEmail(String clientEmail) {
+    public OrderInfo setClientEmail(String clientEmail) {
         this.clientEmail = clientEmail;
         return this;
     }
@@ -70,7 +70,7 @@ public class CashOrder {
         return clientPhone;
     }
 
-    public CashOrder setClientPhone(String clientPhone) {
+    public OrderInfo setClientPhone(String clientPhone) {
         this.clientPhone = clientPhone;
         return this;
     }
@@ -79,7 +79,7 @@ public class CashOrder {
         return paymentType;
     }
 
-    public CashOrder setPaymentType(String paymentType) {
+    public OrderInfo setPaymentType(String paymentType) {
         this.paymentType = paymentType;
         return this;
     }
@@ -88,7 +88,7 @@ public class CashOrder {
         return imageUrl;
     }
 
-    public CashOrder setImageUrl(String imageUrl) {
+    public OrderInfo setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
         return this;
     }

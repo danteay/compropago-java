@@ -18,16 +18,6 @@ public class RequestValidationException extends Exception {
         this.code = code;
     }
 
-    public RequestValidationException(Throwable cause, int code) {
-        super(cause);
-        this.code = code;
-    }
-
-    public RequestValidationException(String message, Throwable cause, int code, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-        this.code = code;
-    }
-
     public int getCode() {
         return this.code;
     }

@@ -1,14 +1,14 @@
 package com.compropago.sdk.resources.payments;
 
-import com.compropago.sdk.resources.models.CashOrder;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.compropago.sdk.exceptions.RequestValidationException;
 import com.compropago.sdk.helpers.ValidationHelper;
-import org.json.JSONArray;
 import com.compropago.sdk.resources.AbstractResource;
+import com.compropago.sdk.resources.models.OrderInfo;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class Cash extends AbstractResource {
@@ -105,7 +105,17 @@ public class Cash extends AbstractResource {
         return resp.getBody().getArray();
     }
 
-    public JSONObject createOrder(CashOrder order) throws UnirestException, RequestValidationException {
+    /**
+     * Generate a rest request to the ComproPago API to register a new Cash order
+     *
+     * @param order OrderInfo object with the necesary information of the order
+     *
+     * @return Json object with the resultant information of the order creation
+     *
+     * @throws UnirestException Request Exception
+     * @throws RequestValidationException Data validation exception
+     */
+    public JSONObject createOrder(OrderInfo order) throws UnirestException, RequestValidationException {
         String url = this.apiUrl + "/charges";
 
         JSONObject data = new JSONObject();
@@ -127,5 +137,11 @@ public class Cash extends AbstractResource {
         ValidationHelper.validateResponse(resp);
 
         return resp.getBody().getObject();
+    }
+
+    public JSONObject verifyOrder(String id) throws UnirestException, RequestValidationException {
+        String url = this.apiUrl + "/charges/{orderId}";
+
+        return null;
     }
 }

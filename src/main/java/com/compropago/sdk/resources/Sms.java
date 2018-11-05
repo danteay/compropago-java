@@ -1,4 +1,4 @@
 package com.compropago.sdk.resources;
 
-public class Sms {
+public class Sms extends AbstractResource {
 }
