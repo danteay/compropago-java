@@ -4,7 +4,7 @@ public class OrderInfo {
 
     private String orderId;
     private String orderName;
-    private float orderPrice;
+    private double orderPrice;
     private String currency;
     private String clientName;
     private String clientEmail;
@@ -30,11 +30,11 @@ public class OrderInfo {
         return this;
     }
 
-    public float getOrderPrice() {
+    public double getOrderPrice() {
         return orderPrice;
     }
 
-    public OrderInfo setOrderPrice(float orderPrice) {
+    public OrderInfo setOrderPrice(double orderPrice) {
         this.orderPrice = orderPrice;
         return this;
     }

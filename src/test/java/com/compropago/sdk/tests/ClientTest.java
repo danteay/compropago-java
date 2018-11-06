@@ -1,7 +1,8 @@
 package com.compropago.sdk.tests;
 
 import com.compropago.sdk.Client;
-import com.compropago.sdk.resources.payments.Cash;
+import com.compropago.sdk.resources.payments.*;
+import com.compropago.sdk.resources.*;
 import com.compropago.sdk.tests.config.TestConfig;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,5 +31,30 @@ class ClientTest extends TestConfig {
         Cash cash = instance.getResourceCash();
         Assertions.assertEquals(cash.getPublicKey(), PUBLIC_KEY);
         Assertions.assertEquals(cash.getPrivateKey(), PRIVATE_KEY);
+    }
+
+    @DisplayName("Spei instance creation")
+    @Test
+    void testCreateSpeiInstance() {
+        Spei spei = instance.getResourceSpei();
+        Assertions.assertEquals(spei.getPublicKey(), PUBLIC_KEY);
+        Assertions.assertEquals(spei.getPrivateKey(), PRIVATE_KEY);
+    }
+
+    @DisplayName("SMS instance creation")
+    @Test
+    void testCreateSmsInstance() {
+        Sms sms = instance.getResourceSms();
+        Assertions.assertEquals(sms.getPublicKey(), PUBLIC_KEY);
+        Assertions.assertEquals(sms.getPrivateKey(), PRIVATE_KEY);
+    }
+
+
+    @DisplayName("Webhook instance creation")
+    @Test
+    void testCreateWebhookInstance() {
+        Webhook wh = instance.getResourceWebhook();
+        Assertions.assertEquals(wh.getPublicKey(), PUBLIC_KEY);
+        Assertions.assertEquals(wh.getPrivateKey(), PRIVATE_KEY);
     }
 }

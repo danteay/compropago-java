@@ -48,4 +48,22 @@ public class Client {
         resource.withKeys(this.publicKey, this.privateKey);
         return resource;
     }
+
+    public Spei getResourceSpei() {
+        Spei resource = new Spei();
+        resource.withKeys(this.publicKey, this.privateKey);
+        return resource;
+    }
+
+    public Sms getResourceSms() {
+        Sms resource = new Sms();
+        resource.withKeys(this.publicKey, this.privateKey);
+        return resource;
+    }
+
+    public Webhook getResourceWebhook() {
+        Webhook resource = new Webhook();
+        resource.withKeys(this.publicKey, this.privateKey);
+        return resource;
+    }
 }
