@@ -12,10 +12,22 @@ public class OrderInfo {
     private String paymentType;
     private String imageUrl;
 
+    /**
+     * Returns The configured ID of the order
+     *
+     * @return String Order ID
+     */
     public String getOrderId() {
         return orderId;
     }
 
+    /**
+     * Set order ID to the order
+     *
+     * @param orderId New order ID
+     *
+     * @return Self instance of order
+     */
     public OrderInfo setOrderId(String orderId) {
         this.orderId = orderId;
         return this;

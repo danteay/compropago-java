@@ -127,6 +127,7 @@ public class Cash extends AbstractResource {
         data.append("client_email", order.getClientEmail());
         data.append("client_phone", order.getClientPhone());
         data.append("image_url", order.getImageUrl());
+        data.append("payment_type", order.getPaymentType());
 
         HttpResponse<JsonNode> resp = Unirest.post(url)
                 .basicAuth(this.privateKey, this.publicKey)
